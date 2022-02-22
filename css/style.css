@@ -1,0 +1,18 @@
+
+/* FONTS */
+/* 'GT Walsheim Pro' */
+
+@import url(./fonts/GTWalsheimPro/gtw.css);
+
+@font-face {
+    font-family: 'Bell';
+    src:url('./fonts/BellMTBold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
+
+
+body {
+    font-weight: 300;
+    background-color: #f00;
+}
