@@ -33,8 +33,15 @@
 
 
 .container_left {
-  max-width: 1360px;
+  max-width: 1380px;
   margin: 0 auto 0 80px;
+  
+}
+
+.container_right {
+  max-width: 1380px;
+  margin: 0 80px 0 auto;
+  height: 100%;
   
 }
 
@@ -198,6 +205,8 @@ body {
 
 }
 .smoothie-heading {
+  position: relative;
+
   font-family: "Bell";
   font-size: 144px;
   font-weight: 700;
@@ -205,38 +214,253 @@ body {
   
 
 }
+
+.smoothie-heading::after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 60%;
+  right: 30px;
+  bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.418);
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 350ms ease-in;
+}
+
 .smoothie-name {
+  position: relative;
   font-family: "Bell";
   font-size: 144px;
   font-weight: 700;
   line-height: 160px;
+  transition: transform 350ms ease-in;
+  
 }
 
+.smoothie-name::after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 40%;
+  left: 20px;
+  bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.418);
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 350ms ease-in;
+
+}
+
+
+.smoothie-heading:hover::after  {
+  transform: scaleX(100%);
+  transform-origin: right;
+
+}
+
+
+.smoothie-heading:hover + .smoothie-name::after{
+  transform: scaleX(100%);
+  transform-origin: left;
+
+}
+
+/* .smoothie-name:hover::after {
+
+  transform: scaleX(100%);
+  transform-origin: left;
+
+
+} */
+
+/* .smoothie-name:hover .smoothie-heading::after  {
+  transform: scaleX(100%);
+  transform-origin: right;
+
+} */
+
+
+
+
+.btn {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  margin-top: 110px;
+  padding: 26px 45px;
+  border-radius: 20px;
+  background: linear-gradient(270deg,#4C8F14, #BBD13A);
+  text-transform: capitalize;
+}
+
+
+.btn:hover {
+  
+  background: linear-gradient(270deg,#53a312, #d5ec51);
+  text-transform: capitalize;
+}
+
+.btn::after {
+  position: absolute;
+  content: url(../img/btn-border.svg);
+  bottom: -8px;
+  right: -14px;
+  z-index: 1;
+}
 
 /* PLATE CONTAINER */
 
 .plate_container {
   position: relative;
   z-index: 6;
-  right: -191px;
+  /* right: -191px; */
   width: 872px;
+  height: 822px;
   /* background-color: #fff; */
 }
 
-.plate_img:nth-child(2) {
+
+
+.desc_block {
+  /* display: none; */
+  opacity: 0;
   position: absolute;
-  top: 0;
-  right: 181px;
-  transform: rotateZ(338deg);
+  left: -50px;
+  bottom: 95px;
+  z-index: 10;
+  transition: opacity 550ms ease;
 }
 
-.plate_img:last-child {
-  /* position: absolute;
-  left: 0; */
-  /* top: 50%; */
-  /* transform: rotateZ(338deg); */
+.desc_block_text {
+  font-family: "GT Walsheim Pro";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 20px;
+  padding: 3px;
+  width: 151px;
+  
 }
+
+
+.arrow {
+  position: absolute;
+  bottom: 120px;
+  left: 110px;
+
+  opacity: 0;
+  transform: rotate(0deg);
+  transition: transform 450ms ease-in, opacity 450ms ease-in;
+}
+
+.link_plate_img1 {
+  display: inline-block;
+
+  position: absolute;
+  left: 10px;
+  top: 130px;
+
+  width: 481px;
+  height: 481px;
+
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #fff;
+
+  transform: rotateZ(0deg);
+
+  transition: transform 450ms ease-in;
+}
+
+
+
+.link_plate_img1:hover {
+  transform: rotateZ(180deg);
+
+}
+
+.link_plate_img1:hover + .desc_block {
+  opacity: 1;
+}
+
+.link_plate_img1:hover ~ .arrow {
+  transform: rotate(360deg);
+  opacity: 1;
+  
+}
+
 
 .plate_img {
   display: inline-block;
+}
+
+.plate_img:first-child {
+  display: inline-block;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  transform: rotateZ(348deg);
+}
+
+
+.plate_img:last-child {
+  position: absolute;
+  right: 25px ;
+  bottom: -45px;
+  transform: rotateZ(338deg);
+}
+
+
+
+
+/* FOOTER */
+
+.footer {
+  height: 300px;
+ 
+
+}
+
+
+.tranding {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  height: inherit;
+}
+
+
+.tranding_text {
+  position: relative;
+  font-family: "GT Walsheim Pro";
+  font-size: 150px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.322);
+  padding-bottom: 40px;
+  margin-left: 100px;
+}
+
+.tranding_text::before {
+  position: absolute;
+  content: url(../img/0-small.png);
+  left: -315px;
+  bottom: -85px;
+}
+
+
+.tranding_text::after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 30%;
+  right: -320px;
+  bottom: 50%;
+  background-color:#F0386B;
+}
+
+.orange {
+  position: absolute;
+  left: -75px;
+  bottom: -60px;
+  z-index: 20;
 }
