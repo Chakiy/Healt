@@ -292,6 +292,7 @@ body {
   border-radius: 20px;
   background: linear-gradient(270deg,#4C8F14, #BBD13A);
   text-transform: capitalize;
+  box-shadow: 5px 1px 18px 0 #865aa5
 }
 
 
@@ -299,15 +300,16 @@ body {
   
   background: linear-gradient(270deg,#53a312, #d5ec51);
   text-transform: capitalize;
+  box-shadow: 5px 1px 18px 0 #ad74d6
 }
 
-.btn::after {
+/* .btn::after {
   position: absolute;
   content: url(../img/btn-border.svg);
-  bottom: -8px;
-  right: -14px;
-  z-index: 1;
-}
+  bottom: -14px;
+  right: -57px;
+  z-index: -1;
+} */
 
 /* PLATE CONTAINER */
 
