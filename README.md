@@ -4,4 +4,5 @@
 
 # NOT RESPONSIVE
 
-<img src="./img/design">
+<img src="./img/design.png" alt="ddesign foto"/>
+<!-- <img src="./img/o.png" alt="plate circle" /> -->
